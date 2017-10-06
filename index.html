@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meow</title>
+    <style>
+    .key {
+      border-style: solid;
+      width: 1em;
+    }
+    kbd {
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <div data-key="65" class="key">
+      <kbd>a</kbd>
+    </div>
+    <audio src="Meowing-cat.mp3" data-key="65"></audio>
+    <script>
+      window.addEventListener("keydown",function(event){
+        const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+        audio.play();
+      })
+    </script>
+  </body>
+</html>
